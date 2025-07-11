@@ -1,0 +1,35 @@
+Bar Widening code: 
+
+          fNBoxes = 12;
+	fRadius = 790;
+	fNBar = 8;
+	fBar[2] = 1225; // BaBar bars
+	fBar[1] = 35;
+	fPrizm[0] = 350 + 1.35;
+	fBoxWidth = fNBar * (fBar[1] + fBarsGap); */
+
+	fNBoxes = 12; // Number of boxes
+	fRadius = 770.5; // Radius of the barbox
+
+	// Set desired number of bars
+	fNBar = 9; // Change this value as needed, e.g., 7, 8, 9, 10, etc.
+
+	// Set some fixed bar width and bar gap
+	fBar[2] = 1225; // Example, adjust as needed
+	fBarsGap = 1.35; // Example, adjust as needed
+
+	// Set the total width of the barbox
+	fPrizm[0] = 350 + 1.35; // Example, adjust as needed
+
+	// Calculate the width of each bar to ensure the total box width is consistent
+	fBar[1] = (fPrizm[0] - (fNBar - 1) * fBarsGap) / fNBar;
+
+	// Update the total width of the barbox based on the number of bars and gap
+	fBoxWidth = fNBar * (fBar[1] + fBarsGap) - fBarsGap;
+
+	// Print out to verify
+	std::cout << "Number of Bars: " << fNBar << std::endl;
+	std::cout << "Bar Width: " << fBar[1] << std::endl;
+	std::cout << "Box Width: " << fBoxWidth << std::endl;
+	std::cout << "Radius: " << fRadius << std::endl;
+
